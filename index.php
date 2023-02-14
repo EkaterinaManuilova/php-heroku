@@ -13,11 +13,11 @@ session_start();
 </header>
 <main>
     <?php
-    if ($_SESSION['username'] !== '') {
-echo 'Здравствуйте, ' . $_SESSION['username'] . "<br>\n";
-echo '<a href="./exit.php">Exit</a>';
-    } else {
+    if ($_SESSION['username'] === '') {
         include ("form.php");
+    } else {
+        echo 'Здравствуйте, ' . $_SESSION['username'] . "<br>\n";
+        echo '<a href="./exit.php">Exit</a>';
     }?>
 </main>
 
